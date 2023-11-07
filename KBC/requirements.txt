@@ -1,0 +1,14 @@
+# Create a program capable of displaying questions to the user like KBC.
+# Use List data type to store the questions and their correct answers.
+# Display the final amount the person is taking home after playing the game.
+
+# Algorithm:
+# 1. Three stages Easy, Medium, Hard.
+# 2. 2 QNS in each stage so total 6 qns in a list.
+# 3. Each qn has 4 options.
+# 4. Use nested list and create a list of options.
+# 5. Store the answers in a single list.
+# 6. Start from easy stage and move forward when user answers the qn correctly.
+# 7. Each easy qn weighs $100, medium qn weighs $200 and hard qn weighs $300 so total $1300.
+# 8. When user answers wrong or all qns are done exit the game and display the total amount won.
+# 9. Once the game is ended display some appropriate message.
