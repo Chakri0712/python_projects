@@ -18,3 +18,9 @@ class Paint:
             return 1.99*self.buckets
         else:
             return 2.19*self.buckets
+            
+class DiscountedPaint(Paint):
+    
+    def discounted_price(self, discount_percentage):
+        
+        return self.total_price()-((discount_percentage/100)*self.total_price())
