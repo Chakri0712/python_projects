@@ -1,7 +1,6 @@
 from random import randint
 import turtle
 
-
 class Point:
 
     def __init__(self, x, y):
@@ -16,7 +15,6 @@ class Point:
         else:
             return False
 
-
 class Rectangle:
 
     def __init__(self, point1, point2):
@@ -26,7 +24,6 @@ class Rectangle:
     def area(self):
         return (self.point2.x - self.point1.x) * \
             (self.point2.y - self.point1.y)
-
 
 x_min = randint(10, 20)
 y_min = randint(10, 20)
