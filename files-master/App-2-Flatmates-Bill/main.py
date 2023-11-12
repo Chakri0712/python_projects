@@ -1,3 +1,4 @@
+import time
 import webbrowser
 import fpdf
 
@@ -84,11 +85,15 @@ class PdfReport:
         webbrowser.open(self.filename)
 
 
-new_bill = Bill(int(input("What is the monthly bill? ")), 30)
+new_bill = Bill(int(input("Hello there!!What is the monthly bill? ")), int(input("OK cool! What is the period of the "
+                                                                                 "bill?")))
 days_stayed = [int(input("How many days Jack stayed? ")), int(input("How many days Anne stayed? "))]
 Flatmate1 = Flatmate("Jack", days_stayed[0])
 Flatmate2 = Flatmate("Anne", days_stayed[1])
+print("Well, here we go !!!")
+time.sleep(2)
 print("Jack has to pay: " + str(Flatmate1.pays(new_bill)))
 print("Anne has to pay: " + str(Flatmate2.pays(new_bill)))
+print("Thank you for using our Bill app! Your PDF has been generated!")
 pdf_report = PdfReport("Bill_Report.pdf")
 pdf_report.generate(Flatmate1, Flatmate2, new_bill)
