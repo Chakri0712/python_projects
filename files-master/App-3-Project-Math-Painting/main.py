@@ -9,13 +9,13 @@ class Canvas:
         self.height = height
         self.color = color
 
-    def make(self, image_path):
-        # data = np.zeros((self.height, self.width, 3), dtype=np.uint8)
-        # data[:] = self.color
-        # image = Image.fromarray(data, "RGB")
-        image = Image.new("RGB", (self.height, self.width), self.color)
-        draw = ImageDraw.Draw(image)
-        draw.rectangle((100, 100, 200, 200), fill="blue")
+    def make(self, image_path):git add .__doc__ = 
+        data = np.zeros((self.height, self.width, 3), dtype=np.uint8)
+        data[:] = self.color
+        image = Image.fromarray(data, "RGB")
+        # image = Image.new("RGB", (self.height, self.width), self.color)
+        # draw = ImageDraw.Draw(image)
+        # draw.rectangle((100, 100, 200, 200), fill="blue")
         image.save(image_path)
 
 
@@ -44,6 +44,6 @@ class Rectangle:
         pass
 
 
-# canvas = Canvas(5000, 5000, [200, 20, 20])
-canvas = Canvas(5000, 5000, "Red")
+canvas = Canvas(5000, 5000, [200, 20, 20])
+# canvas = Canvas(5000, 5000, "Red")
 canvas.make("Image.png")
