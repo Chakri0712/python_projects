@@ -5,6 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cbfe845-3e69-43e2-aaf5-cec38f2c2b2d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/canvas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shapes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectPoint/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectPoint/.idea/ProjectPoint.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectPoint/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectPoint/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectPoint/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectPoint/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectPoint/Rectangle.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectPoint/house.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectPoint/point.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +49,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/chakri/python_projects/files-master/App-3-Project-Math-Painting&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
