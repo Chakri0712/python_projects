@@ -1,67 +1,45 @@
-import numpy as np
-from PIL import Image, ImageDraw
-
-
-class Canvas:
-
-    def __init__(self, width, height, color):
-        self.width = width
-        self.height = height
-        self.color = color
-
-        # create a numpy array of zeroes
-        self.data = np.zeros((self.height, self.width, 3), dtype=np.uint8)
-        # change the zeroes to color provided
-        self.data[:] = self.color
-
-    def make(self, image_path):
-        image = Image.fromarray(self.data, "RGB")
-        # image = Image.new("RGB", (self.height, self.width), self.color)
-        # draw = ImageDraw.Draw(image)
-        # draw.rectangle((100, 100, 200, 200), fill="blue")
-        image.save(image_path)
-
-
-class Square:
-
-    def __init__(self, x, y, side, color):
-        self.x = x
-        self.y = y
-        self.side = side
-        self.color = color
-
-    def draw(self, canvas):
-        canvas.data[self.x: self.x + self.side, self.y:self.y + self.side] = self.color
-        canvas.make("Image.png")
-
-
-class Rectangle:
-
-    def __init__(self, x, y, width, height, color):
-        self.x = x
-        self.y = y
-        self.width = width
-        self.height = height
-        self.color = color
-
-    def draw(self, canvas):
-        canvas.data[self.x: self.x + self.height, self.y:self.y + self.width] = self.color
-        canvas.make("Image.png")
-
+from canvas import Canvas
+from shapes import Square, Rectangle
 
 canvas_width = int(input("Enter the width of Canvas: "))
 canvas_height = int(input("Enter the height of Canvas: "))
-canvas = Canvas(500, 500, [200, 20, 20])
+canvas_color_dict = {"white": [255, 255, 255], "Black": [0, 0, 0]}
+canvas_color = input("select the color of canvas Black or White: ")
+
+
+def draw_req_shape(canvas):
+    while True:
+        shape = input("What do you want to draw? Rectangle or Square. Type something else to quit the game: ")
+        if shape.lower() == "rectangle":
+            x_coordinate = int(input("Enter X coordinate: "))
+            y_coordinate = int(input("Enter Y coordinate: "))
+            rect_width = int(input("Enter the width of Rectangle: "))
+            rect_height = int(input("Enter the height of Rectangle: "))
+            rect_color_input = input("Enter values of RGB separated by spaces: ")
+            rect_color = [int(element) for element in rect_color_input.split()]
+            rect = Rectangle(x_coordinate, y_coordinate, rect_width, rect_height, rect_color)
+            rect.draw(canvas)
+        elif shape.lower() == "square":
+            x_coordinate = int(input("Enter X coordinate: "))
+            y_coordinate = int(input("Enter Y coordinate: "))
+            square_side = int(input("Enter the side of Square: "))
+            square_color_input = input("Enter values of RGB separated by spaces: ")
+            square_color = [int(element) for element in square_color_input.split()]
+            square = Square(x_coordinate, y_coordinate, square_side, square_color)
+            square.draw(canvas)
+        else:
+            break
+
+
+def make_shape(color):
+    canvas = Canvas(canvas_width, canvas_height, canvas_color_dict[color])
+    canvas.make("Image.png")
+    draw_req_shape(canvas)
+
+
+if canvas_color.lower() == "white":
+    make_shape("white")
+elif canvas_color.lower() == "black":
+    make_shape("Black")
+
 # canvas = Canvas(5000, 5000, "Red")
-canvas.make("Image.png")
-square = Square(100, 150, 75, [50, 50, 200])
-square.draw(canvas)
-rect = Rectangle(200, 300, 50, 75, [0, 250, 50])
-rect.draw(canvas)
-
-# ask user for canvas width, height, color in list format (RGB)
-#
-# if user chooses square, then ask for x, y, side, color in list format (RGB)
-#
-# if user chooses rect, then ask for x, y, width, height, color in list format (RGB)
-
