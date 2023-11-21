@@ -1,7 +1,6 @@
 class Bill:
     """
-    Object that contains data about a bill, such as
-    total amount and period of the bill.
+    Bill class contains bill amount and bill period
     """
 
     def __init__(self, amount, period):
@@ -11,15 +10,14 @@ class Bill:
 
 class Flatmate:
     """
-    Creates a flatmate person who lives in the flat
-    and pays a share of the bill.
-    """
+       Flatmate class contains name of the flatmate, no.of days he/she stayed in the house and
+        method pays to know how much bill the flatmate needs to pay
+       """
 
-    def __init__(self, name, days_in_house):
+    def __init__(self, name, days_in_house, days_stayed):
         self.name = name
         self.days_in_house = days_in_house
+        self.days_stayed = days_stayed
 
-    def pays(self, bill, flatmate2):
-        weight = self.days_in_house / (self.days_in_house + flatmate2.days_in_house)
-        to_pay = bill.amount * weight
-        return to_pay
+    def pays(self, bill):
+        return round((bill.amount / sum(self.days_stayed)) * self.days_in_house,2)
