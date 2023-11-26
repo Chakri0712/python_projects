@@ -1,3 +1,4 @@
+import os
 import webbrowser
 import fpdf
 
@@ -16,7 +17,8 @@ class PdfReport:
         pdf.add_page()
 
         # adding image as an icon by giving path and dimensions
-        image_path = "files/house.png"
+        fixed_image_path = "files/house.png"
+        image_path = os.path.abspath(os.path.join(os.path.dirname(__file__), fixed_image_path))
         pdf.image(image_path, 10, 10, 20, 20)
 
         # giving space in terms of height
@@ -50,7 +52,7 @@ class PdfReport:
 
         # Write the monthly bill for Anne to the PDF.
         pdf.multi_cell(100, 10,
-                       "Monthly Bill for " + flatmate1.name + " for staying " + str(flatmate2.days_in_house) + " days: " + str(
+                       "Monthly Bill for " + flatmate2.name + " for staying " + str(flatmate2.days_in_house) + " days: " + str(
                            flatmate2.pays(bill)))
 
         # Output the PDF.
